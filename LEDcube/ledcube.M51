@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.00                                                        11/06/2018  21:33:31  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.00                                                        11/06/2018  21:47:53  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
@@ -59,7 +59,7 @@ LINK MAP OF MODULE:  ledcube (LEDCUBE)
             CODE    4E3FH     0065H     UNIT         ?PR?_DISPLAYCUBE?LEDCUBE
             CODE    4EA4H     0065H     UNIT         ?PR?_DISPLAYCUBE2?LEDCUBE
             CODE    4F09H     0065H     UNIT         ?PR?DISPLAYSIN_CUBE_TABLE?LEDCUBE
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 2
 
 
             CODE    4F6EH     0065H     UNIT         ?PR?DISPLAYX_TABLE?LEDCUBE
@@ -119,7 +119,7 @@ SEGMENT                                     DATA_GROUP
   +--> ?PR?DISPLAYIVU_1?LEDCUBE
   +--> ?PR?DISPLAY_LCX?LEDCUBE
   +--> ?PR?DISPLAYSHANDIAN?LEDCUBE
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 3
 
 
   +--> ?PR?DISPLAYSNOW?LEDCUBE
@@ -179,7 +179,7 @@ SEGMENT                                     DATA_GROUP
   +--> ?CO?MOVE
   +--> ?PR?_HC595?LEDCUBE
   +--> ?PR?HC595OUT?LEDCUBE
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 4
 
 
   +--> ?PR?_DELAY?LEDCUBE
@@ -239,7 +239,7 @@ SEGMENT                                     DATA_GROUP
 
 ?PR?DISPLAYXZ_TABLE?LEDCUBE               0008H    0001H
   +--> ?CO?MOVE
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 5
 
 
   +--> ?PR?_HC595?LEDCUBE
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4634H         PUBLIC        tablew
   D:00B0H         PUBLIC        P3
   D:00C0H         PUBLIC        P4
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 6
 
 
   B:00A8H.7       PUBLIC        EA
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:5038H         PUBLIC        displayyx_table
   B:00B0H.7       PUBLIC        DAT
   C:509DH         PUBLIC        displayxz_table
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 7
 
 
   C:53ACH         PUBLIC        interinit
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:3FEBH         LINE#         74
   C:3FF6H         LINE#         75
   C:3FF9H         LINE#         76
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 8
 
 
   C:3FF9H         LINE#         77
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:53A3H         LINE#         34
   C:53A5H         LINE#         36
   C:53A7H         LINE#         37
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 9
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 9
 
 
   C:53ABH         LINE#         38
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:533BH         LINE#         78
   C:533DH         LINE#         79
   C:533FH         LINE#         80
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 10
 
 
   -------         ENDPROC       _DISPLAY
@@ -599,7 +599,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:47A5H         LINE#         127
   C:47A5H         LINE#         128
   C:47AAH         LINE#         129
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 11
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 11
 
 
   C:47AAH         LINE#         130
@@ -659,7 +659,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4EACH         LINE#         170
   C:4EAFH         LINE#         171
   C:4EAFH         LINE#         172
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 12
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 12
 
 
   C:4EBAH         LINE#         173
@@ -719,7 +719,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:51BAH         LINE#         221
   C:51C3H         LINE#         222
   C:51C5H         LINE#         223
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 13
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 13
 
 
   C:51C7H         LINE#         224
@@ -779,7 +779,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4D0CH         LINE#         268
   C:4D0CH         LINE#         269
   C:4D11H         LINE#         270
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 14
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 14
 
 
   C:4D12H         LINE#         271
@@ -839,7 +839,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   -------         PROC          DISPLAYX_TABLE
   -------         DO            
   D:0005H         SYMBOL        x
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 15
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 15
 
 
   D:0004H         SYMBOL        y
@@ -899,7 +899,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:5008H         LINE#         364
   C:500BH         LINE#         365
   C:5016H         LINE#         366
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 16
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 16
 
 
   C:5016H         LINE#         367
@@ -959,7 +959,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:509DH         LINE#         410
   C:509DH         LINE#         411
   C:509DH         LINE#         413
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 17
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 17
 
 
   C:509FH         LINE#         414
@@ -1019,7 +1019,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:514FH         LINE#         463
   C:5151H         LINE#         464
   C:5154H         LINE#         465
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 18
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 18
 
 
   C:5154H         LINE#         466
@@ -1079,7 +1079,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4DD5H         LINE#         509
   C:4DE0H         LINE#         510
   C:4DE0H         LINE#         511
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 19
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 19
 
 
   C:4DE8H         LINE#         512
@@ -1139,7 +1139,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4C52H         LINE#         560
   C:4C54H         LINE#         561
   C:4C56H         LINE#         562
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 20
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 20
 
 
   -------         ENDPROC       _DISPLAYLOUDOU
@@ -1199,7 +1199,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:42D3H         LINE#         609
   C:42D6H         LINE#         610
   C:42E1H         LINE#         611
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 21
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 21
 
 
   C:42E1H         LINE#         612
@@ -1259,7 +1259,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:49A2H         LINE#         660
   C:49A2H         LINE#         661
   C:49C0H         LINE#         662
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 22
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 22
 
 
   C:49C9H         LINE#         663
@@ -1319,7 +1319,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4A8CH         LINE#         713
   C:4A8EH         LINE#         714
   C:4A8EH         LINE#         716
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 23
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 23
 
 
   C:4AACH         LINE#         717
@@ -1379,7 +1379,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4B63H         LINE#         766
   C:4B63H         LINE#         767
   C:4B68H         LINE#         768
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 24
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 24
 
 
   C:4B6AH         LINE#         769
@@ -1439,7 +1439,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   -------         ENDPROC       DISPLAY_LCX
   -------         PROC          INTERINIT
   C:53ACH         LINE#         817
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 25
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 25
 
 
   C:53ACH         LINE#         818
@@ -1499,7 +1499,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4805H         LINE#         876
   C:4807H         LINE#         877
   C:4807H         LINE#         879
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 26
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 26
 
 
   C:480AH         LINE#         880
@@ -1559,7 +1559,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:48C6H         LINE#         936
   C:48CFH         LINE#         937
   C:48D2H         LINE#         938
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 27
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 27
 
 
   C:48DBH         LINE#         939
@@ -1619,7 +1619,7 @@ SYMBOL TABLE OF MODULE:  ledcube (LEDCUBE)
   C:4DB4H         LINE#         998
   C:4DB8H         LINE#         1000
   C:4DBCH         LINE#         1001
-BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:33:31  PAGE 28
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/06/2018  21:47:53  PAGE 28
 
 
   -------         ENDPROC       ADC_FINISH
