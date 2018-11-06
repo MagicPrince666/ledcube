@@ -682,7 +682,7 @@ void displaywater_1()
   TR1=1;
    for(z=0;z<8;z++)
   {
-    while(tim1<110)
+    while(tim1<150)
 	{
 	  	for(y=0;y<8;y++)
 		{
@@ -705,7 +705,7 @@ void displaywater_1()
   }
   for(z=1;z<6;z++)
   {
-    while(tim1<80)
+    while(tim1<300)
 	{
 	  	for(y=0;y<8;y++)
 		{

@@ -1,9 +1,9 @@
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 1   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 1   
 
 
 C51 COMPILER V8.05a, COMPILATION OF MODULE LEDCUBE
 OBJECT MODULE PLACED IN ledcube.OBJ
-COMPILER INVOKED BY: d:\Keil_c51\C51\BIN\C51.EXE ledcube.c COMPACT ROM(COMPACT) BROWSE DEBUG OBJECTEXTEND
+COMPILER INVOKED BY: d:\Keil_c51\C51\BIN\C51.EXE ledcube.c BROWSE DEBUG OBJECTEXTEND
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   53   1        unsigned char x,y,z;
   54   1        TR0=1;
   55   1        TR1=1;
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 2   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 2   
 
   56   1        for(z=0;z<1;z++)
   57   1        {
@@ -126,7 +126,7 @@ line level    source
  115   4                        tim0=0;
  116   4                        for(x=0;x<8;x++)
  117   4                        {
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 3   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 3   
 
  118   5                         hc595(yanhua[z][y][x]<<yiwei);
  119   5                        }
@@ -190,7 +190,7 @@ line level    source
  177   4                        for(x=0;x<8;x++)
  178   4                        {
  179   5                         hc595(cube2[z][y][x]);
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 4   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 4   
 
  180   5                        }
  181   4                        hc595out();
@@ -254,7 +254,7 @@ line level    source
  239   4                        {
  240   5                         hc595(y_table[z][y][x]);
  241   5                        }
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 5   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 5   
 
  242   4                        hc595out();
  243   4                        while(tim0<2)
@@ -318,7 +318,7 @@ line level    source
  301   4                        {
  302   5                         hc595(sin_cube_table[z][y][x]);
  303   5                        }
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 6   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 6   
 
  304   4                        hc595out();
  305   4                        while(tim0<2)
@@ -382,7 +382,7 @@ line level    source
  363   5                        }
  364   4                        hc595out();
  365   4                        while(tim0<2)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 7   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 7   
 
  366   4                        {
  367   5                                P2=cen[y];
@@ -446,7 +446,7 @@ line level    source
  425   5                        }
  426   4                        hc595out();
  427   4                        while(tim0<2)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 8   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 8   
 
  428   4                        {
  429   5                                P2=cen[y];
@@ -510,7 +510,7 @@ line level    source
  487   5                        }
  488   4                        hc595out();
  489   4                        while(tim0<2)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 9   
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 9   
 
  490   4                        {
  491   5                                P2=cen[7-y];
@@ -574,7 +574,7 @@ line level    source
  549   4                        hc595out();
  550   4                        while(tim0<2)
  551   4                        {
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 10  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 10  
 
  552   5                                P2=cen[7-y];
  553   5                                delay(2);
@@ -638,7 +638,7 @@ line level    source
  611   5                                {
  612   6                                        P2=cen[y];
  613   6                                        delay(2);
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 11  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 11  
 
  614   6                                        P2=0x00;
  615   6                                }  
@@ -702,7 +702,7 @@ line level    source
  673   2        }
  674   1        TR0=0;
  675   1        TR1=0;
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 12  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 12  
 
  676   1      }
  677          
@@ -713,7 +713,7 @@ line level    source
  682   1        TR1=1;
  683   1         for(z=0;z<8;z++)
  684   1        {
- 685   2          while(tim1<110)
+ 685   2          while(tim1<150)
  686   2              {
  687   3                      for(y=0;y<8;y++)
  688   3                      {
@@ -736,7 +736,7 @@ line level    source
  705   2        }
  706   1        for(z=1;z<6;z++)
  707   1        {
- 708   2          while(tim1<80)
+ 708   2          while(tim1<300)
  709   2              {
  710   3                      for(y=0;y<8;y++)
  711   3                      {
@@ -766,7 +766,7 @@ line level    source
  735   1        TR0=1;
  736   1        TR1=1;
  737   1        for(z=0;z<21;z++)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 13  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 13  
 
  738   1        {
  739   2          if((z+1)%7==0)
@@ -830,7 +830,7 @@ line level    source
  797   3                      {
  798   4                        tim0=0;
  799   4                        for(x=0;x<8;x++)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 14  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 14  
 
  800   4                        {
  801   5                         hc595(LCX[z][y][x]);
@@ -894,7 +894,7 @@ line level    source
  857   3                   break;
  858   3                 }
  859   2                 if(KEY2==0)
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 15  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 15  
 
  860   2                 {
  861   3                   flag=2;
@@ -958,7 +958,7 @@ line level    source
  919   3                         {
  920   4                         displayrain();
  921   4                         }
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 16  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 16  
 
  922   3                          for(shu=5;shu>0;shu--)
  923   3                         { 
@@ -1022,7 +1022,7 @@ line level    source
  981   3                      case 15:P2=tablew[(LED_TAB[14])%8];gaodu(0x01);break;
  982   3                      case 16:P2=tablew[(LED_TAB[15])%8];gaodu(0x01);break;
  983   3              }
-C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 00:06:06 PAGE 17  
+C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 21:33:31 PAGE 17  
 
  984   2              P2=0X00;        
  985   2         }
@@ -1061,11 +1061,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   6013    ----
+   CODE SIZE        =   5380    ----
    CONSTANT SIZE    =    400    ----
    XDATA SIZE       =    528    ----
-   PDATA SIZE       =     32     113
-   DATA SIZE        =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     32     110
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
