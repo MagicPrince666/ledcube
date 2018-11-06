@@ -1,5 +1,6 @@
 LEDcube/*.hex
+LEDcube/ledcube
 LEDcube/*.LST
 LEDcube/*.M51
 LEDcube/*.OBJ
-LEDcube/ledcube
+

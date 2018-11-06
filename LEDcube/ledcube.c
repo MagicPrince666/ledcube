@@ -13,8 +13,9 @@ sbit KEY3=P3^4;
 unsigned int tim0=0,tim1=0;
 unsigned char ADC_Count=0,LINE=15,G=0,T,flag=1;
 unsigned char code cen[8]={0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
-//unsigned char code cen[8]={0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01};
-unsigned char code tablew[]={0x80,0xC0,0xE0,0xF0,0xF8,0xFC,0xFE,0xFF}; 
+unsigned char code cen_2[8]={0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01};
+//unsigned char code tablew[]={0x80,0xC0,0xE0,0xF0,0xF8,0xFC,0xFE,0xFF};
+unsigned char code tablew[]={0x01,0x03,0x07,0x0f,0x1f,0x3f,0x7f,0xFF}; 
 unsigned char buffer[8];
 void delay(unsigned int x)
 {
@@ -41,6 +42,15 @@ void hc595out()
   ST=0;
   ST=1;
 }
+
+void cen_on(u8 y){
+  u16 light;
+  P2=cen[y];
+  for(light=50;light;light--);
+  P2=0x00;
+  for(light=100;light;light--);
+}
+
 void gaodu(u8 high)//
 {
     u8 i;
@@ -67,9 +77,8 @@ void display(u16 time,u8 dat)
 		  hc595out();
 		  while(tim0<2)
 		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
+			  //P2=cen[7-y];
+			  cen_on(7-y);
 		  }  
 		}
 	}
@@ -120,7 +129,7 @@ void display_yanhua(u16 time,u8 yiwei)
 		  hc595out();
 		  while(tim0<2)
 		  {
-			  P2=cen[7-y];
+			  P2=cen_2[y];
               for(light=(6-z)*80;light;light--);
 			  P2=0x00;
 			  for(light=z*100;light;light--);
@@ -132,128 +141,6 @@ void display_yanhua(u16 time,u8 yiwei)
   TR0=0;
   TR1=0;
 }
-void displaycube(u16 time)
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<26;z++)
-  {
-    while(tim1<time)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(cube[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displaycube2(u16 time)
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<8;z++)
-  {
-    while(tim1<time)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(cube2[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displaysnow()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<14;z++)
-  {
-    while(tim1<50)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(snow[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-
-void displayy_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<6;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(y_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-
 
 void displayhart_table(shu)
 {
@@ -274,99 +161,7 @@ void displayhart_table(shu)
 		  hc595out();
 		  while(tim0<2)
 		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displaysin_cube_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<14;z++)
-  {
-    while(tim1<60)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(sin_cube_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displayx_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<6;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(x_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displayz_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<6;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(z_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
+			 cen_on(y);
 		  }  
 		}
 	}
@@ -376,129 +171,6 @@ void displayz_table()
   TR1=0;
 }
 
-void displayyx_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<26;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(yx_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-
-void displayxz_table()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<26;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(xz_table[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-
-void displaybianxing()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<11;z++)
-  {
-    while(tim1<200)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(bianxing[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
-void displayshandian()
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<22;z++)
-  {
-    while(tim1<100)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		  
-		  hc595(shandian[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
 void displayrain()
 {
   unsigned char x,y,z;
@@ -530,36 +202,7 @@ void displayrain()
   TR0=0;
   TR1=0;
 }
-void displayloudou(u16 time)
-{
-  unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<8;z++)
-  {
-    while(tim1<time)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(king[7-z][7-y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-  }
-  TR0=0;
-  TR1=0;
-}
+
 void displayking()
 {
   u8 x,y,z,i=0,j=0,num;
@@ -609,9 +252,7 @@ void displayking()
 			  hc595out();
 			  while(tim0<2)
 			  {
-				  P2=cen[y];
-				  delay(2);
-				  P2=0x00;
+				  cen_on(y);
 			  }  
 			}
 		}
@@ -705,7 +346,7 @@ void displaywater_1()
   }
   for(z=1;z<6;z++)
   {
-    while(tim1<300)
+    while(tim1<200)
 	{
 	  	for(y=0;y<8;y++)
 		{
@@ -718,7 +359,7 @@ void displaywater_1()
 		  hc595out();
 		  while(tim0<2)
 		  {
-			  P2=cen[7-y];
+			  P2=cen_2[y];
 			  delay(2);
 			  P2=0x00;
 		  }  
@@ -729,83 +370,32 @@ void displaywater_1()
   TR0=0;
   TR1=0;
 }
-void displayIVU_1()
+
+
+void general(unsigned char p[][8][8], unsigned char times,unsigned int tv)
 {
   unsigned char x,y,z;
+  u16 light;
   TR0=1;
   TR1=1;
-  for(z=0;z<21;z++)
+  for(z=0;z<times;z++)
   {
-    if((z+1)%7==0)
-	{
-	while(tim1<=300)
+    while(tim1<tv)
 	{
 	  	for(y=0;y<8;y++)
 		{
 		  tim0=0;
 		  for(x=0;x<8;x++)
 		  {
-		   hc595(IVU_1[z][y][x]);
+		   hc595(p[z][y][x]);
 		  }
 		  hc595out();
 		  while(tim0<2)
 		  {
-			  P2=cen[7-y];
-			  delay(2);
+			  P2=cen_2[y];
+              for(light=50;light;light--);
 			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-	}
-	else
-	{
-    while(tim1<=100)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(IVU_1[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
-		  }  
-		}
-	}
-	tim1=0;
-	}
-  }
-  TR0=0;
-  TR1=0;
-}
-void display_LCX()
-{
- unsigned char x,y,z;
-  TR0=1;
-  TR1=1;
-  for(z=0;z<27;z++)
-  {
-    while(tim1<150)
-	{
-	  	for(y=0;y<8;y++)
-		{
-		  tim0=0;
-		  for(x=0;x<8;x++)
-		  {
-		   hc595(LCX[z][y][x]);
-		  }
-		  hc595out();
-		  while(tim0<2)
-		  {
-			  P2=cen[7-y];
-			  delay(2);
-			  P2=0x00;
+			  for(light=100;light;light--);
 		  }  
 		}
 	}
@@ -814,6 +404,7 @@ void display_LCX()
   TR0=0;
   TR1=0;
 }
+
 void interinit()
 {
   TMOD=0x11;
@@ -886,21 +477,22 @@ void main()
 	   {	    
 	   	//display(1000,0xff);
 		displaywater_1();
+		
 	   }
 	   while(flag==1)
 	   {
 	        displayking();
-			displayloudou(200);
-		    displaycube(200);
-		    display(1000,0xff);
-			displaycube2(200);
+			general( king, 8, 200);
+			general( cube, 26, 200);
+		    display( 1000, 0xff);
+			general( cube2, 26, 200);
 			display(300,0x00);
-		    displayIVU_1();
-			display_LCX();
-		    displayshandian();
+		    general( IVU_1, 21,200);
+			//general( LCX, 27, 200);
+			general( shandian, 22, 100);
 		    for(shu=0;shu<5;shu++)
 		   {
-		     displaysnow();
+		     general( snow, 14, 80);
 		   }
 		   for(shu=20;shu>10;shu--)
 		   {
@@ -921,18 +513,18 @@ void main()
 		   }
 		    for(shu=5;shu>0;shu--)
 		   { 
-		   displaysin_cube_table();
+		   	general( sin_cube_table, 14, 80);
 		   }   
 		    
-		   displayxz_table();
-		   displayyx_table(); 
+		   general( xz_table, 26, 200); 
+		   general( yx_table, 26, 200);
 			for(shu=2;shu>0;shu--)
 		   { 
-		   displayx_table();
-		   displayy_table();
-		   displayz_table(); 
+		   	general( x_table, 6, 200);
+		   	general( y_table, 6, 200);
+		 	general( z_table, 6, 200);   
 		   } 
-		   displaybianxing();
+		   general( bianxing, 11, 200);
 		   display(1000,0x00);
 	   }
 	   while(flag==2)
@@ -964,22 +556,22 @@ void time1() interrupt 3
 	if(G>=17) G=1;
    	switch(G)								     //往点阵屏填充一列的数据
 	{		
-		case 1: P2=tablew[(LED_TAB[0])%8];gaodu(0x80);break;	 //(LED_TAB[1] )%8取八的余数
-		case 2: P2=tablew[(LED_TAB[1])%8];gaodu(0x80);break;
-		case 3: P2=tablew[(LED_TAB[2])%8];gaodu(0x40);break;
-		case 4: P2=tablew[(LED_TAB[3])%8];gaodu(0x40);break;
-		case 5: P2=tablew[(LED_TAB[4])%8];gaodu(0x20);break;
-		case 6: P2=tablew[(LED_TAB[5])%8];gaodu(0x20);break;
+		case 1: P2=tablew[(LED_TAB[0])%8];gaodu(0x01);break;	 //(LED_TAB[1] )%8取八的余数
+		case 2: P2=tablew[(LED_TAB[1])%8];gaodu(0x01);break;
+		case 3: P2=tablew[(LED_TAB[2])%8];gaodu(0x02);break;
+		case 4: P2=tablew[(LED_TAB[3])%8];gaodu(0x02);break;
+		case 5: P2=tablew[(LED_TAB[4])%8];gaodu(0x08);break;
+		case 6: P2=tablew[(LED_TAB[5])%8];gaodu(0x08);break;
 		case 7: P2=tablew[(LED_TAB[6])%8];gaodu(0x10);break;
 		case 8: P2=tablew[(LED_TAB[7])%8];gaodu(0x10);break;
-		case 9: P2=tablew[(LED_TAB[8])%8];gaodu(0x08);break;
-		case 10:P2=tablew[(LED_TAB[9])%8];gaodu(0x08);break;
+		case 9: P2=tablew[(LED_TAB[8])%8];gaodu(0x20);break;
+		case 10:P2=tablew[(LED_TAB[9])%8];gaodu(0x20);break;
 		case 11:P2=tablew[(LED_TAB[10])%8];gaodu(0x04);break;
 		case 12:P2=tablew[(LED_TAB[11])%8];gaodu(0x04);break;
-		case 13:P2=tablew[(LED_TAB[12])%8];gaodu(0x02);break;
-		case 14:P2=tablew[(LED_TAB[13])%8];gaodu(0x02);break;
-		case 15:P2=tablew[(LED_TAB[14])%8];gaodu(0x01);break;
-		case 16:P2=tablew[(LED_TAB[15])%8];gaodu(0x01);break;
+		case 13:P2=tablew[(LED_TAB[12])%8];gaodu(0x40);break;
+		case 14:P2=tablew[(LED_TAB[13])%8];gaodu(0x40);break;
+		case 15:P2=tablew[(LED_TAB[14])%8];gaodu(0x80);break;
+		case 16:P2=tablew[(LED_TAB[15])%8];gaodu(0x80);break;
 	}
 	P2=0X00;	
    }
