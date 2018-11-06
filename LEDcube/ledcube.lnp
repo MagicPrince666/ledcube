@@ -1,0 +1,4 @@
+"ledcube.obj",
+"move.obj" 
+TO "ledcube" 
+RAMSIZE(256) 
