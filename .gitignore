@@ -1,6 +1,9 @@
-LEDcube/*.hex
-LEDcube/ledcube
-LEDcube/*.LST
-LEDcube/*.M51
-LEDcube/*.OBJ
+code/*.hex
+code/ledcube
+code/*.LST
+code/*.M51
+code/*.OBJ
+code/*.lnp
+code/*.plg
+code/*.Opt
 

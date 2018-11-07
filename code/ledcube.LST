@@ -7,10 +7,11 @@ COMPILER INVOKED BY: d:\Keil_c51\C51\BIN\C51.EXE ledcube.c BROWSE DEBUG OBJECTEX
 
 line level    source
 
+
    1          #include "STC12C5A60S2.H"
    2          #include<intrins.h>
    3          #include"move.h"
-   4          #include"FFT.H"                  //FFT(¿ìËÙ¸µÀïÒ¶±ä»»)¹¦ÄÜÍ·ÎÄ¼þ
+   4          #include"FFT.H"                  //FFT(ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½Ò¶ï¿½ä»»)ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ä¼ï¿½
    5          #define u8 unsigned char 
    6          #define u16 unsigned int
    7          sbit ST=P4^5;
@@ -66,7 +67,7 @@ line level    source
 
   56   1          u8 i;
   57   1              for(i=0;i<8;i++)
-  58   1          hc595(high);           //·¢ËÍ¶ÎÑ¡Êý¾Ý
+  58   1          hc595(high);           //ï¿½ï¿½ï¿½Í¶ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
   59   1              hc595out();
   60   1      }
   61          void display(u16 time,u8 dat)
@@ -438,17 +439,17 @@ line level    source
  417   1        TR0=0;
  418   1        TR1=0;
  419   1        IPH = PADCH;
- 420   1        IP  = PADC;                     //ÖÐ¶ÏÓÅÏÈ¼¶
+ 420   1        IP  = PADC;                     //ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½È¼ï¿½
  421   1        EA=1;
- 422   1        P1ASF  = 0x03;          //0000,0010, ½« P1.1 ÖÃ³ÉÄ£Äâ¿Ú
- 423   1        AUXR1 &=0xFB;           //1111,1011, Áî ADRJ=0
- 424   1        EADC   =1;                            //ADÖÐ¶Ï´ò¿ª
- 425   1        ADC_CONTR = ADC_POWER | ADC_SPEEDHH | ADC_START | channel; //1110 1001   1´ò¿ª A/D £¨ADC_POWER£©×ª»»µçÔ´
-             -£»11ËÙ¶ÈÎª90ÖÜÆÚÒ»´Î£»
- 426   1                                                                             //0ÖÐ¶Ï±êÖ¾ÇåÁã£»1Æô¶¯adc(ADC_START);001ADÍ¨µÀ´ò¿ª£¨
+ 422   1        P1ASF  = 0x03;          //0000,0010, ï¿½ï¿½ P1.1 ï¿½Ã³ï¿½Ä£ï¿½ï¿½ï¿½
+ 423   1        AUXR1 &=0xFB;           //1111,1011, ï¿½ï¿½ ADRJ=0
+ 424   1        EADC   =1;                            //ADï¿½Ð¶Ï´ï¿½
+ 425   1        ADC_CONTR = ADC_POWER | ADC_SPEEDHH | ADC_START | channel; //1110 1001   1ï¿½ï¿½ A/D ï¿½ï¿½ADC_POWERï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ô´
+             -ï¿½ï¿½11ï¿½Ù¶ï¿½Îª90ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î£ï¿½
+ 426   1                                                                             //0ï¿½Ð¶Ï±ï¿½Ö¾ï¿½ï¿½ï¿½ã£»1ï¿½ï¿½adc(ADC_START);001ADÍ¨ï¿½ï¿½ï¿½ò¿ª£ï¿½
 C51 COMPILER V8.05a   LEDCUBE                                                              11/06/2018 23:39:01 PAGE 8   
 
-             -ÕâÀïÎªP1.1£©;
+             -ï¿½ï¿½ï¿½ï¿½ÎªP1.1ï¿½ï¿½;
  427   1      }
  428          void main()
  429          {  
@@ -475,14 +476,14 @@ line level    source
  450   2                 if(KEY2==0)
  451   2                 {
  452   3                   flag=2;
- 453   3                   TMOD = 0x12; //T0: 8Î»×Ô¶¯ÖØ×°      T1: 16Î»Ä£Ê½
- 454   3                       TH0  = 0x70; //ADC²ÉÑùÖÜÆÚ£¨80us»ò6.66us£©  ²ÉÑùÂÊ 12.5 KHz                                                              
+ 453   3                   TMOD = 0x12; //T0: 8Î»ï¿½Ô¶ï¿½ï¿½ï¿½×°      T1: 16Î»Ä£Ê½
+ 454   3                       TH0  = 0x70; //ADCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½80usï¿½ï¿½6.66usï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 12.5 KHz                                                              
  455   3                       TL0  = 0x70; //
- 456   3                       TH1  = 0xfd; //Ë¢ÐÂÏÔÊ¾ÖÜÆÚ£¨300us»ò25us£©     Ë¢ÐÂÂÊ                                                                             
+ 456   3                       TH1  = 0xfd; //Ë¢ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú£ï¿½300usï¿½ï¿½25usï¿½ï¿½     Ë¢ï¿½ï¿½ï¿½ï¿½                                                                             
  457   3                       TL1  = 0Xa8; //
- 458   3                       EADC = 1;        //¿ªÆôADC 
- 459   3                       TR1   = 1; //Ë¢ÐÂÏÔÊ¾
- 460   3                       TR0   = 1; //¿ØÖÆ²ÉÑùËÙÂÊ
+ 458   3                       EADC = 1;        //ï¿½ï¿½ï¿½ï¿½ADC 
+ 459   3                       TR1   = 1; //Ë¢ï¿½ï¿½ï¿½ï¿½Ê¾
+ 460   3                       TR0   = 1; //ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  461   3                       ADC_Count=0;
  462   3                       break;
  463   3                 }
@@ -556,16 +557,16 @@ line level    source
  529   3                 }
  530   2                 while(flag==2)
  531   2                 {
- 532   3                          TR1  = 1;     //¿ªÆô¶¨Ê±Æ÷ÖÐ¶Ï1
- 533   3                              TR0  = 1;     //¿ªÆô¶¨Ê±Æ÷ÖÐ¶Ï0
- 534   3                              EADC = 1;         //¿ªÆôADC 
+ 532   3                          TR1  = 1;     //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð¶ï¿½1
+ 533   3                              TR0  = 1;     //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð¶ï¿½0
+ 534   3                              EADC = 1;         //ï¿½ï¿½ï¿½ï¿½ADC 
  535   3                                  ADC_Count=0;
- 536   3                                  while(ADC_Count<128); //×ª»»128´Î
- 537   3                                      for(i=0;i<128;i++)        //FFT²ÎÊýÐé²¿¸³Öµ
+ 536   3                                  while(ADC_Count<128); //×ªï¿½ï¿½128ï¿½ï¿½
+ 537   3                                      for(i=0;i<128;i++)        //FFTï¿½ï¿½ï¿½ï¿½ï¿½é²¿ï¿½ï¿½Öµ
  538   3                                      {
- 539   4                                              Fft_Image[i]=0;   //Ô­Ê¼Êý¾Ý Ðé²¿¸³ÖµÎª0
+ 539   4                                              Fft_Image[i]=0;   //Ô­Ê¼ï¿½ï¿½ï¿½ï¿½ ï¿½é²¿ï¿½ï¿½ÖµÎª0
  540   4                                      }
- 541   3                                      FFT();                //FFTÔËËã²¢×ª»»Îª¸÷Æµ¶Î·ùÖµ
+ 541   3                                      FFT();                //FFTï¿½ï¿½ï¿½ã²¢×ªï¿½ï¿½Îªï¿½ï¿½Æµï¿½Î·ï¿½Öµ
  542   3                              
  543   3                 }
  544   2              }
@@ -579,13 +580,13 @@ line level    source
  550          {
  551   1         if(flag==2)
  552   1         {
- 553   2          TH1  = 0xfd; //Ë¢ÐÂÏÔÊ¾ÖÜÆÚ£¨300us»ò25us£©  Ë¢ÐÂÂÊ                                                                             
+ 553   2          TH1  = 0xfd; //Ë¢ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ú£ï¿½300usï¿½ï¿½25usï¿½ï¿½  Ë¢ï¿½ï¿½ï¿½ï¿½                                                                             
  554   2              TL1  = 0Xa8; //
  555   2              G++;                                                    
  556   2              if(G>=17) G=1;
- 557   2              switch(G)                                                                    //ÍùµãÕóÆÁÌî³äÒ»ÁÐµÄÊý¾Ý
+ 557   2              switch(G)                                                                    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
  558   2              {               
- 559   3                      case 1: P2=tablew[(LED_TAB[0])%8];gaodu(0x01);break;     //(LED_TAB[1] )%8È¡°ËµÄÓàÊý
+ 559   3                      case 1: P2=tablew[(LED_TAB[0])%8];gaodu(0x01);break;     //(LED_TAB[1] )%8È¡ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½
  560   3                      case 2: P2=tablew[(LED_TAB[1])%8];gaodu(0x01);break;
  561   3                      case 3: P2=tablew[(LED_TAB[2])%8];gaodu(0x02);break;
  562   3                      case 4: P2=tablew[(LED_TAB[3])%8];gaodu(0x02);break;
@@ -614,8 +615,8 @@ line level    source
  585          void ADC_Finish() interrupt 5
  586          {          
  587   1              ADC_CONTR &= !ADC_FLAG; 
- 588   1              Fft_Real[LIST_TAB[ADC_Count]] =(int)((ADC_RES)<<1)+(ADC_RESL>>1)*2;     //°´LIST_TAB±íÀïµÄË³Ðò£¬½øÐÐ´æ´¢²
-             -ÉÑùÖµ
+ 588   1              Fft_Real[LIST_TAB[ADC_Count]] =(int)((ADC_RES)<<1)+(ADC_RESL>>1)*2;     //ï¿½ï¿½LIST_TABï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ò£¬½ï¿½ï¿½Ð´æ´¢ï¿½
+             -ï¿½ï¿½ï¿½Öµ
  589   1              if(ADC_Count<=127)
  590   1               { ADC_Count++;  }
  591   1              else              
@@ -623,10 +624,10 @@ line level    source
  593   1      }
  594          void Ad_Control() interrupt 1                                    
  595          {                               
- 596   1              //¿ØÖÆ²ÉÑùËÙÂÊ
+ 596   1              //ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  597   1              if(flag==2)
  598   1              {
- 599   2                      ADC_CONTR = ADC_POWER | ADC_SPEEDHH| ADC_START | channel; //¿ªÊ¼AD²É¼¯
+ 599   2                      ADC_CONTR = ADC_POWER | ADC_SPEEDHH| ADC_START | channel; //ï¿½ï¿½Ê¼ADï¿½É¼ï¿½
  600   2              }
  601   1              if(flag==1 || flag==3)
  602   1              { 
